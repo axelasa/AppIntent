@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFFFFF"
     tools:context=".MainActivity">
 
     <TextView
@@ -12,52 +13,73 @@
         android:layout_height="wrap_content"
         android:text="Call Me"
         android:background="#008080"
-        app:layout_constraintBottom_toTopOf="@id/sendMail"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    <TextView
-        android:id="@+id/sendMail"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Call Me"
-        android:background="#008080"
         app:layout_constraintBottom_toTopOf="@id/caller"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/callNumber" />
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Button
         android:id="@+id/caller"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center_horizontal"
         android:text="Call"
-        app:layout_constraintTop_toBottomOf="@+id/sendMail"
+        app:layout_constraintTop_toBottomOf="@+id/callNumber"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/sender"/>
+        app:layout_constraintBottom_toTopOf="@id/sendMail"/>
+    <TextView
+        android:id="@+id/sendMail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Mail"
+        android:background="#008080"
+        app:layout_constraintBottom_toTopOf="@id/sender"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/caller" />
     <Button
         android:id="@+id/sender"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="send mail"
-        app:layout_constraintTop_toBottomOf="@id/caller"
-        app:layout_constraintBottom_toTopOf="@id/local"
+        app:layout_constraintTop_toBottomOf="@id/sendMail"
+        app:layout_constraintBottom_toTopOf="@id/maps"
         />
+    <TextView
+        android:id="@+id/maps"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Mail"
+        android:background="#008080"
+        app:layout_constraintBottom_toTopOf="@id/local"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/sender" />
     <Button
         android:id="@+id/local"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Open Maps"
-        app:layout_constraintTop_toBottomOf="@id/sender"
-        app:layout_constraintBottom_toTopOf="@id/website"
+        app:layout_constraintTop_toBottomOf="@id/maps"
+        app:layout_constraintBottom_toTopOf="@id/site"
         />
+    <TextView
+        android:id="@+id/site"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send Mail"
+        android:background="#008080"
+        app:layout_constraintBottom_toTopOf="@id/website"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/local" />
     <Button
         android:id="@+id/website"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Open Link"
-        app:layout_constraintTop_toBottomOf="@id/local"
+        app:layout_constraintTop_toBottomOf="@id/site"
         app:layout_constraintBottom_toBottomOf="parent"
         />
 

@@ -6,30 +6,35 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
+import com.axel.makecall.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
-
+    private lateinit var binding:ActivityMainBinding
     override fun onCreate(savedInstanceState: Bundle?) {
+        binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(binding.root)
         title = "Make call from app intent"
 
-        val phone = findViewById<Button>(R.id.caller)
-
+        //val phone = findViewById<Button>(R.id.caller)
+        val phone = binding.caller
         phone.setOnClickListener {
             call(it)
         }
 
-        val mail = findViewById<Button>(R.id.sender)
+        //val mail = findViewById<Button>(R.id.sender)
+        val mail = binding.sender
         mail.setOnClickListener {
             email(it)
         }
-        val geolocation = findViewById<Button>(R.id.local)
+       // val geolocation = findViewById<Button>(R.id.local)
+        val geolocation = binding.local
         geolocation.setOnClickListener {
             location(it)
         }
-        val web = findViewById<Button>(R.id.website)
+        //val web = findViewById<Button>(R.id.website)
+        val web = binding.website
         web.setOnClickListener {
             webs(it)
         }
