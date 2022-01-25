@@ -1,10 +1,9 @@
-package com.axel.makecall
+package com.axel.makecall.activity
 
 import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.axel.makecall.databinding.ActivityMainBinding
 
@@ -15,7 +14,7 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        title = "Make call from app intent"
+        title = "Implicit Intents"
 
         //val phone = findViewById<Button>(R.id.caller)
         val phone = binding.caller
@@ -37,6 +36,11 @@ class MainActivity : AppCompatActivity() {
         val web = binding.website
         web.setOnClickListener {
             webs(it)
+        }
+        val proceed = binding.next
+        proceed.setOnClickListener {
+            intent=Intent(this, MediaIntents::class.java)
+            startActivity(intent)
         }
     }
     private fun call (view:View){
